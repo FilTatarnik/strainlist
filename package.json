@@ -1,7 +1,7 @@
 {
   "name": "strainlist",
   "version": "0.1.0",
-  "homepage": "https://github.com/FilTatarnik/strainlist",
+  "homepage": "https://filtatarnik.github.io/strainlist/",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
