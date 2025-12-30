@@ -1,0 +1,133 @@
+.strain-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #8cb91d;
+}
+
+.search-box button {
+  padding: 10px 20px;
+  background: #666;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-box button:hover {
+  background: #555;
+}
+
+/* Type filter buttons */
+.type-filters {
+  display: flex;
+  gap: 8px;
+}
+
+.type-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+}
+
+.type-btn.sativa {
+  background: #c24d2b;
+}
+
+.type-btn.indica {
+  background: #7b5a8e;
+}
+
+.type-btn.hybrid {
+  background: #8cb91d;
+}
+
+/* Active/selected state */
+.type-btn.active {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.type-btn:not(.active) {
+  opacity: 0.6;
+}
+
+.type-btn:not(.active):hover {
+  opacity: 0.85;
+}
+
+/* When no filter is active, all buttons full opacity */
+.type-filters:not(:has(.active)) .type-btn {
+  opacity: 1;
+}
+
+.type-filters:not(:has(.active)) .type-btn:hover {
+  transform: scale(1.02);
+}
+
+/* Results count */
+.results-count {
+  font-size: 14px;
+  color: #666;
+  padding-left: 4px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 500px) {
+  .filter-controls {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-box {
+    flex: 1;
+    max-width: 350px;
+  }
+
+  .type-filters {
+    flex: none;
+  }
+
+  .type-btn {
+    flex: none;
+    padding: 10px 20px;
+  }
+}

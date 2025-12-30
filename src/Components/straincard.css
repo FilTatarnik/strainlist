@@ -1,0 +1,48 @@
+.straincard {
+  width: 110px;
+  height: 110px;
+  border-radius: 8px;
+  padding: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, sans-serif;
+  color: white;
+}
+
+.straincard:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* type colors */
+.straincard.sativa { background: #c04b2a; }
+.straincard.indica { background: #6b4a7e; }
+.straincard.hybrid { background: #8bb31d; }
+
+/* top-left type letter */
+.strain-type {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* center abbreviation */
+.strain-abbr {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* bottom-right name */
+.strain-name {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  font-size: 10px;
+  text-align: right;
+  max-width: 90%;
+}
