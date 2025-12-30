@@ -4,15 +4,17 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   background-color: #e8e8e8;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .App {
   padding: 8px;
   max-width: 1400px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Mobile-first responsive grid */
@@ -20,6 +22,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
+  width: 100%;
 }
 
 /* Small phones landscape / larger phones */

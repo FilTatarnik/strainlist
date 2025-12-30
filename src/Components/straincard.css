@@ -1,48 +1,60 @@
 .straincard {
-  width: 110px;
-  height: 110px;
-  border-radius: 8px;
-  padding: 8px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 6px;
+  padding: 8%;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: white;
+  box-sizing: border-box;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .straincard:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* type colors */
-.straincard.sativa { background: #c04b2a; }
-.straincard.indica { background: #6b4a7e; }
-.straincard.hybrid { background: #8bb31d; }
+.straincard.sativa { background: #c24d2b; }
+.straincard.indica { background: #7b5a8e; }
+.straincard.hybrid { background: #8cb91d; }
 
 /* top-left type letter */
 .strain-type {
   position: absolute;
-  top: 6px;
-  left: 8px;
-  font-size: 12px;
-  font-weight: bold;
+  top: 8%;
+  left: 10%;
+  font-size: clamp(10px, 2.5vw, 14px);
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 /* center abbreviation */
 .strain-abbr {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: clamp(20px, 8vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-top: 5%;
 }
 
-/* bottom-right name */
+/* bottom center name */
 .strain-name {
   position: absolute;
-  bottom: 6px;
-  right: 8px;
-  font-size: 10px;
-  text-align: right;
-  max-width: 90%;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(8px, 2vw, 12px);
+  text-align: center;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
 }
