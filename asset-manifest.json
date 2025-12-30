@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FilTatarnik/strainlist/static/css/main.e02c3d65.css",
+    "main.js": "/FilTatarnik/strainlist/static/js/main.76533896.js",
+    "static/js/453.c163cd43.chunk.js": "/FilTatarnik/strainlist/static/js/453.c163cd43.chunk.js",
+    "index.html": "/FilTatarnik/strainlist/index.html",
+    "main.e02c3d65.css.map": "/FilTatarnik/strainlist/static/css/main.e02c3d65.css.map",
+    "main.76533896.js.map": "/FilTatarnik/strainlist/static/js/main.76533896.js.map",
+    "453.c163cd43.chunk.js.map": "/FilTatarnik/strainlist/static/js/453.c163cd43.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e02c3d65.css",
+    "static/js/main.76533896.js"
+  ]
+}
