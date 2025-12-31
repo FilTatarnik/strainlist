@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import strains from "../Data/strain_data.json";
 import StrainCard from "./straincard";
 import StrainModal from "./strainmodal";
@@ -8,6 +8,12 @@ function StrainGrid() {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeType, setActiveType] = useState(null);
   const [selectedStrain, setSelectedStrain] = useState(null);
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Apply dark mode class to body
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", darkMode);
+  }, [darkMode]);
 
   const filteredStrains = strains.filter((strain) => {
     const matchesName = strain.name
@@ -62,6 +68,12 @@ function StrainGrid() {
             Hybrid
           </button>
         </div>
+                <button
+          className={`type-btn theme-toggle ${darkMode ? "sativa" : "indica"}`}
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
       </div>
 
       <p className="results-count">{filteredStrains.length} strains found</p>

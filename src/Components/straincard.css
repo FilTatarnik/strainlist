@@ -41,7 +41,7 @@
   font-size: clamp(20px, 8vw, 48px);
   font-weight: 400;
   letter-spacing: -0.02em;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 
 /* bottom center name */

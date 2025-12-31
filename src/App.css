@@ -69,3 +69,47 @@ html, body {
     grid-template-columns: repeat(8, 1fr);
   }
 }
+
+/* ==================== DARK MODE ==================== */
+body.dark-mode {
+  background-color: #585858;
+}
+
+body.dark-mode .filter-controls {
+  background: #757575;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .search-box input {
+  background: #333;
+  border-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .search-box input::placeholder {
+  color: #888;
+}
+
+body.dark-mode .search-box input:focus {
+  border-color: #8cb91d;
+}
+
+body.dark-mode .search-box button {
+  background: #444;
+}
+
+body.dark-mode .search-box button:hover {
+  background: #555;
+}
+
+body.dark-mode .theme-toggle {
+  background: #8cb91d;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background: #8cb91d;
+}
+
+body.dark-mode .results-count {
+  color: #aaa;
+}
