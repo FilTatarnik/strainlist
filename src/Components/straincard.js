@@ -19,12 +19,13 @@ const typeColors = {
 };
 
 const StrainCard = ({ strain, onClick }) => {
-  const { name, type } = strain;
+  const { name, type, thc_level } = strain;
   const abbr = getAbbreviation(name);
 
   return (
     <div className={`straincard ${typeColors[type]}`} onClick={onClick}>
       <div className="strain-type">{type[0]}</div>
+      <div className="strain-thc">{parseInt(thc_level)}</div>
       <div className="strain-abbr">{abbr}</div>
       <div className="strain-name">{name}</div>
     </div>
