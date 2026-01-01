@@ -4,9 +4,25 @@
   gap: 16px;
 }
 
-.filter-controls {
+/* .filter-controls {
   display: flex;
   flex-direction: column;
+  position: fixed;
+  z-index: 100;
+  width: auto; 
+  gap: 12px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+.filter-controls {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  top: 16px;
+  z-index: 100;
   gap: 12px;
   padding: 16px;
   background: white;
@@ -35,7 +51,7 @@
 }
 
 .search-box button {
-  padding: 10px 20px;
+  padding: 5px 20px;
   background: #666;
   color: white;
   border: none;
@@ -43,6 +59,7 @@
   font-size: 14px;
   cursor: pointer;
   transition: background 0.2s;
+  height: 42px; /* match the input height */
 }
 
 .search-box button:hover {
@@ -69,14 +86,17 @@
 
 .type-btn.sativa {
   background: #c24d2b;
+  /* font-weight: 400; */
 }
 
 .type-btn.indica {
-  background: #7b5a8e;
+  background: #6E507C;
+  /* font-weight: 400; */
 }
 
 .type-btn.hybrid {
   background: #8cb91d;
+  /* font-weight: 400; */
 }
 
 /* Active/selected state */
@@ -125,6 +145,92 @@
   transform: scale(1.05);
 }
 
+/* Filter dropdown */
+
+
+.filter-dropdown-container {
+  position: sticky;
+}
+
+.filter-btn {
+  padding: 5px 20px;
+  background: #666;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.filter-btn:hover {
+  background: #555;
+}
+
+.filter-btn.active {
+  background: #4a4a4a;
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 200;
+  min-width: 80px;
+}
+
+.dark-mode .filter-dropdown {
+  background: #3a3a3a;
+}
+
+.filter-dropdown button {
+  display: block;
+  width: 100%;
+  /* padding: 10px 16px; */
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.dark-mode .filter-dropdown button {
+  color: white;
+}
+
+.filter-dropdown button:hover {
+  background: #f0f0f0;
+}
+
+.dark-mode .filter-dropdown button:hover {
+  background: #4a4a4a;
+}
+
+.filter-dropdown button.active {
+  background: #e8e8e8;
+  font-weight: 600;
+}
+
+.dark-mode .filter-dropdown button.active {
+  background: #555;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 4px 0;
+}
+
+.dark-mode .dropdown-divider {
+  background: #555;
+}
+
 /* Responsive adjustments */
 @media (min-width: 800px) {
   .filter-controls {
@@ -132,6 +238,7 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    
   }
 
   .search-box {

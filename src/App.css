@@ -7,14 +7,13 @@
 html, body {
   background-color: #e8e8e8;
   min-height: 100vh;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .App {
   padding: 8px;
   max-width: 1400px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 /* Mobile-first responsive grid */

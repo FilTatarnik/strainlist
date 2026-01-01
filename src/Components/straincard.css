@@ -23,7 +23,7 @@
 
 /* type colors */
 .straincard.sativa { background: #c24d2b; }
-.straincard.indica { background: #7b5a8e; }
+.straincard.indica { background: #6E507C; }
 .straincard.hybrid { background: #8cb91d; }
 
 /* top-left type letter */
@@ -32,17 +32,16 @@
   top: 8%;
   left: 10%;
   font-size: clamp(10px, 2.5vw, 14px);
-  font-weight: 500;
+  font-weight: 250;
   text-transform: uppercase;
-  font-weight: bold;
 }
 
 /* center abbreviation */
 .strain-abbr {
   font-size: clamp(20px, 8vw, 48px);
-  font-weight: 400;
+  font-weight: 250;
   letter-spacing: -0.02em;
-  /* margin-top: 5%; */
+  /* margin-top: 1%; */
 }
 
 /* bottom center name */
@@ -52,13 +51,13 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: clamp(8px, 2vw, 12px);
-  text-align: center;
+  text-align: left;
   width: 90%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: 400;
-  font-weight: bold;
+  font-weight: 250;
+  /* font-weight: bold; */
 
 }
 
@@ -69,5 +68,5 @@
   right: 10%;
   font-size: clamp(10px, 2.5vw, 14px);
   font-weight: 500;
-  font-weight: bold;
+  /* font-style: italic; */
 }

@@ -9,19 +9,13 @@ function StrainGrid() {
   const [activeType, setActiveType] = useState(null);
   const [selectedStrain, setSelectedStrain] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const [showFilterMenu, setShowFilterMenu] = useState(false);
+  const [sortOption, setSortOption] = useState(null);
 
   // Apply dark mode class to body
   useEffect(() => {
     document.body.classList.toggle("dark-mode", darkMode);
   }, [darkMode]);
-
-  const filteredStrains = strains.filter((strain) => {
-    const matchesName = strain.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
-    const matchesType = activeType ? strain.type === activeType : true;
-    return matchesName && matchesType;
-  });
 
   const handleTypeClick = (type) => {
     setActiveType(activeType === type ? null : type);
@@ -35,6 +29,44 @@ function StrainGrid() {
     setSelectedStrain(null);
   };
 
+  const handleSort = (option) => {
+    setSortOption(option);
+    setShowFilterMenu(false);
+  };
+
+  const handleClear = () => {
+    setSearchTerm("");
+    setActiveType(null);
+    setSortOption(null);
+  };
+
+  // Filter strains
+  let filteredStrains = strains.filter((strain) => {
+    const matchesName = strain.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const matchesType = activeType ? strain.type === activeType : true;
+    return matchesName && matchesType;
+  });
+
+  // Sort strains
+  if (sortOption) {
+    filteredStrains = [...filteredStrains].sort((a, b) => {
+      switch (sortOption) {
+        case "a-z":
+          return a.name.localeCompare(b.name);
+        case "z-a":
+          return b.name.localeCompare(a.name);
+        case "thc-high":
+          return (parseFloat(b.thc_level) || 0) - (parseFloat(a.thc_level) || 0);
+        case "thc-low":
+          return (parseFloat(a.thc_level) || 0) - (parseFloat(b.thc_level) || 0);
+        default:
+          return 0;
+      }
+    });
+  }
+
   return (
     <div className="strain-container">
       <div className="filter-controls">
@@ -45,7 +77,44 @@ function StrainGrid() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button onClick={() => setSearchTerm("")}>Clear</button>
+          <div className="filter-dropdown-container">
+            <button
+              className={`filter-btn ${sortOption ? "active" : ""}`}
+              onClick={() => setShowFilterMenu(!showFilterMenu)}
+            >
+              Filter {sortOption && "✓"}
+            </button>
+            {showFilterMenu && (
+              <div className="filter-dropdown">
+                <button
+                  className={sortOption === "a-z" ? "active" : ""}
+                  onClick={() => handleSort("a-z")}
+                >
+                  A → Z
+                </button>
+                <button
+                  className={sortOption === "z-a" ? "active" : ""}
+                  onClick={() => handleSort("z-a")}
+                >
+                  Z → A
+                </button>
+                <div className="dropdown-divider"></div>
+                <button
+                  className={sortOption === "thc-high" ? "active" : ""}
+                  onClick={() => handleSort("thc-high")}
+                >
+                  THC ↑
+                </button>
+                <button
+                  className={sortOption === "thc-low" ? "active" : ""}
+                  onClick={() => handleSort("thc-low")}
+                >
+                  THC ↓
+                </button>
+              </div>
+            )}
+          </div>
+          <button onClick={handleClear}>Clear</button>
         </div>
 
         <div className="type-filters">
@@ -68,7 +137,7 @@ function StrainGrid() {
             Hybrid
           </button>
         </div>
-                <button
+        <button
           className={`type-btn theme-toggle ${darkMode ? "sativa" : "indica"}`}
           onClick={() => setDarkMode(!darkMode)}
         >
