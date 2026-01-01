@@ -5,6 +5,7 @@ const typeColors = {
   Sativa: "sativa",
   Indica: "indica",
   Hybrid: "hybrid",
+  "": "blank",
 };
 
 const StrainModal = ({ strain, onClose }) => {

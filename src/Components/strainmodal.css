@@ -59,6 +59,10 @@
   background: linear-gradient(145deg, #9cc721, #6d8f14);
 }
 
+.modal-content.blank {
+  background-color: #3B9DA1;
+}
+
 /* Close button */
 .modal-close {
   position: absolute;
