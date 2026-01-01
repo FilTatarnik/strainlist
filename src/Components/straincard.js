@@ -21,11 +21,13 @@ const typeColors = {
 const StrainCard = ({ strain, onClick }) => {
   const { name, type, thc_level } = strain;
   const abbr = getAbbreviation(name);
-
+  const thcValue = parseInt(thc_level);
+  const typeClass = typeColors[type] || "unknown";
+  
   return (
-    <div className={`straincard ${typeColors[type]}`} onClick={onClick}>
-      <div className="strain-type">{type[0]}</div>
-      <div className="strain-thc">{parseInt(thc_level)}</div>
+    <div className={`straincard ${typeClass}`} onClick={onClick}>
+      <div className="strain-type">{type?.[0] || "?"}</div>
+      {!isNaN(thcValue) && <div className="strain-thc">{thcValue}</div>}
       <div className="strain-abbr">{abbr}</div>
       <div className="strain-name">{name}</div>
     </div>

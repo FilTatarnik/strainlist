@@ -25,6 +25,7 @@
 .straincard.sativa { background: #c24d2b; }
 .straincard.indica { background: #6E507C; }
 .straincard.hybrid { background: #8cb91d; }
+.straincard.unknown { background: #3B9DA1; }
 
 /* top-left type letter */
 .strain-type {
