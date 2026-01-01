@@ -69,6 +69,7 @@ function StrainGrid() {
 
   return (
     <div className="strain-container">
+
       <div className="filter-controls">
         <div className="search-box">
           <input
@@ -142,6 +143,12 @@ function StrainGrid() {
           onClick={() => setDarkMode(!darkMode)}
         >
           {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+        <button 
+          className='type-btn indica'
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          ▲
         </button>
       </div>
 
