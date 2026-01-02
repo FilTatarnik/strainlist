@@ -4,6 +4,9 @@
   gap: 16px;
 }
 
+.strain-title {
+  text-align: center;
+}
 /* ===========================================
    FILTER CONTROLS - Mobile First (default)
    =========================================== */

@@ -69,7 +69,7 @@ function StrainGrid() {
 
   return (
     <div className="strain-container">
-
+      <h1 className='strain-title'>Strain List</h1>
       <div className="filter-controls">
         <div className="search-box">
           <input
