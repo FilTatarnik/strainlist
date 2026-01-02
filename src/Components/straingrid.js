@@ -155,6 +155,16 @@ function StrainGrid() {
             >
               ▲
             </button>
+            <button 
+              className='type-btn hybrid'
+              onClick={() => {
+                const randomRows = Math.floor(Math.random() * 51) + 75; // 75-125 rows
+                const cardHeight = 120; // approximate height of card + gap
+                window.scrollBy({ top: randomRows * cardHeight, behavior: 'smooth' });
+              }}
+            >
+              ▼
+            </button>
           </div>
         </div>
       </div>
