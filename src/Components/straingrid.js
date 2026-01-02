@@ -115,7 +115,7 @@ function StrainGrid() {
               </div>
             )}
           </div>
-          <button onClick={handleClear}>Clear</button>
+          <button className='filter-clear' onClick={handleClear}>Clear</button>
         </div>
 
         <div className="type-filters">
@@ -138,18 +138,25 @@ function StrainGrid() {
             Hybrid
           </button>
         </div>
-        <button
-          className={`type-btn theme-toggle ${darkMode ? "sativa" : "indica"}`}
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          {darkMode ? "Light Mode" : "Dark Mode"}
-        </button>
-        <button 
-          className='type-btn indica'
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          ▲
-        </button>
+
+        <div className='filter-extra'>
+          <div className='filter-extra-theme'>
+            <button
+              className={`type-btn theme-toggle ${darkMode ? "sativa" : "indica"}`}
+              onClick={() => setDarkMode(!darkMode)}
+            >
+              {darkMode ? "Light Mode" : "Dark Mode"}
+            </button>
+          </div>
+          <div className='filter-extra-scroll'>
+            <button 
+              className='type-btn indica'
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              ▲
+            </button>
+          </div>
+        </div>
       </div>
 
       <p className="results-count">{filteredStrains.length} strains found</p>

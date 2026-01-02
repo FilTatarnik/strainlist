@@ -295,6 +295,19 @@
   .theme-toggle {
     align-self: center;
   }
+
+  .filter-extra {
+    display: flex;
+    gap: 10px;
+  }
+
+  .filter-extra-theme {
+
+  }
+
+  .filter-extra-scroll {
+
+  }
 }
 
 /* ===========================================
@@ -323,8 +336,16 @@
   }
 
   .search-box input {
-    flex: 1;
-    min-width: 200px;
+    flex: 4;
+    /* min-width: 200px; */
+  }
+
+  .filter-dropdown-container {
+    flex: 2;
+  }
+
+  .filter-clear {
+    flex: 2;
   }
 
   .button-group {
@@ -334,4 +355,19 @@
   .button-group button {
     flex: none;
   }
+
+  .filter-extra {
+    display: flex;
+    align-items: baseline;
+    gap: 10px
+  }
+
+  .filter-extra-theme {
+    flex: 2;
+  }
+
+  .filter-extra-scroll {
+    flex: 1;
+  }
+
 }
