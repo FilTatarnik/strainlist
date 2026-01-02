@@ -309,13 +309,13 @@
     gap: 10px;
   }
 
-  .filter-extra-theme {
+  /* .filter-extra-theme {
 
   }
 
   .filter-extra-scroll {
 
-  }
+  } */
 }
 
 /* ===========================================
@@ -323,8 +323,8 @@
    Optional intermediate breakpoint
    =========================================== */
 @media (min-width: 300px) and (max-width: 899px) {
-  .filter-controls{
-  }
+  /* .filter-controls{
+  } */
 
   .filter-btn {
     flex: 1;

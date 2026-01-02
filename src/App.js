@@ -1,6 +1,6 @@
-import Straincard from './Components/straincard';
+// import Straincard from './Components/straincard';
 import StrainGrid from './Components/straingrid';
-import strains from "./Data/strain_data.json";
+// import strains from "./Data/strain_data.json";
 import './App.css';
 
 function App() {
