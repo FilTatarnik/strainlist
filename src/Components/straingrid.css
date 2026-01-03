@@ -4,9 +4,19 @@
   gap: 16px;
 }
 
+/* ===========================================
+   STRAIN TITLE
+   =========================================== */
 .strain-title {
   text-align: center;
+  color: black;
 }
+
+.dark-mode .strain-title {
+  color: white;
+}
+
+
 /* ===========================================
    FILTER CONTROLS - Mobile First (default)
    =========================================== */
